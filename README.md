@@ -1,61 +1,61 @@
-# Project Price Scrap Ver 2
+# Shopee Price Scraper Project Ver 2
 
-Dự án cào dữ liệu sản phẩm và giá cả từ Shopee sử dụng Python và Playwright.
+A project to scrape product data and prices from Shopee using Python and Playwright.
 
-## Tính năng
-- Trích xuất thông tin sản phẩm: tên, giá, đánh giá, metadata...
-- Xử lý nội dung động và JavaScript bằng Playwright.
-- Sử dụng plugin stealth để hạn chế bị phát hiện là bot.
-- Xuất dữ liệu ra file CSV thuận tiện cho việc xử lý bằng Pandas hoặc Excel.
+## Features
+- **Extract product information**: name, price, ratings, metadata, etc.
+- **Handle dynamic content**: processes JavaScript-rendered pages using Playwright.
+- **Bot detection bypass**: utilizes the stealth plugin to reduce the risk of being identified as a bot.
+- **Data export**: saves results to CSV files for easy processing with Pandas or Excel.
 
-## Công nghệ sử dụng
-- **Python**: Ngôn ngữ lập trình chính.
-- **Playwright**: Thư viện tự động hóa trình duyệt.
-- **playwright-stealth**: Plugin ẩn danh cho Playwright.
-- **Pandas**: Xử lý và xuất dữ liệu.
+## Technologies Used
+- **Python**: Core programming language.
+- **Playwright**: Browser automation library.
+- **playwright-stealth**: Stealth plugin for Playwright.
+- **Pandas**: Data manipulation and export.
 
-## Cài đặt
+## Installation
 
-### Yêu cầu hệ thống
+### System Requirements
 - Python 3.8+
-- pip (Trình quản lý gói Python)
+- pip (Python package manager)
 
-### Các bước cài đặt
-1. Tạo môi trường ảo (khuyến nghị):
+### Installation Steps
+1. **Create a virtual environment (recommended):**
    ```bash
    python -m venv venv
-   # Trên Windows:
+   # On Windows:
    venv\Scripts\activate
-   # Trên Linux/Mac:
+   # On Linux/Mac:
    source venv/bin/activate
    ```
 
-2. Cài đặt các thư viện cần thiết:
+2. **Install required dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Cài đặt trình duyệt cho Playwright:
+3. **Install Playwright browsers:**
    ```bash
    playwright install chromium
    ```
 
-## Cách sử dụng
-Để chạy script cào dữ liệu:
+## Usage
+To run the scraper script:
 ```bash
 python shopee_scraper.py
 ```
-Sau khi chạy, chương trình sẽ yêu cầu bạn nhập:
-- **Từ khóa**: Tên sản phẩm bạn muốn tìm kiếm.
-- **Số trang**: Số lượng trang kết quả bạn muốn cào (mỗi trang chứa khoảng 60 sản phẩm).
+Upon running, the program will prompt you to enter:
+- **Keyword**: The name of the product you want to search for.
+- **Number of pages**: The number of result pages you want to scrape (each page contains approximately 60 products).
 
-Dữ liệu sẽ được lưu tự động vào file CSV trong thư mục gốc với tên file định dạng: `shopee_[từ_khóa]_[timestamp].csv`.
+Data will be automatically saved to a CSV file in the root directory with the naming format: `shopee_[keyword]_[timestamp].csv`.
 
-## Kiểm thử
-Chạy các bài kiểm tra bằng pytest:
+## Testing
+Run tests using pytest:
 ```bash
 pytest
 ```
 
-## Lưu ý
-Dự án sử dụng thư mục `shopee_profile` để lưu trữ dữ liệu trình duyệt, giúp duy trì trạng thái đăng nhập hoặc cấu hình trình duyệt nếu cần.
+## Note
+The project uses the `shopee_profile` directory to store browser data, which helps maintain login states or browser configurations if needed.
